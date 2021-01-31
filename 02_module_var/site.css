@@ -1,0 +1,64 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: whitesmoke;
+}
+
+.title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 12px 20px;
+}
+
+.container {
+    padding: 20px 30px;
+    display: flex;
+    background-color: burlywood;
+    border-radius: 3px;
+}
+
+.hotelName {
+    text-align: center;
+    font-weight: 700;
+    padding: 12px 20px;
+    width: 50%;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+.hotelPhoto {
+    padding: 16px 24px;
+    width: 50%;
+    text-align: center;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+#hotelImg {
+    max-width: 350px;
+    max-height: 250px;
+}
+
+.hotelData {
+    text-align: center;
+    padding: 16px 24px;
+    width: 50%;
+    display: inline-block;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+#rating {
+    color: royalblue;
+}
+
+hr {
+    color: burlywood;
+    height: 30px;
+    margin-top: -31px;
+    border-radius: 20px;
+    border-width: 0 0 2px 0;
+}
