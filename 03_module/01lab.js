@@ -15,4 +15,4 @@ if (worker.brutto < 12000) {
 
 const extrapay = worker.wages = 14 ? worker.wages : 12;
 
-let monthNeto = console.log("Salary " + (anualNeto/extrapay) + " €");
+let monthNeto = console.log("Salary ", anualNeto/extrapay, " €");

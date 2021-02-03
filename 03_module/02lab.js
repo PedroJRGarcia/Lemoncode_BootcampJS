@@ -12,4 +12,4 @@ switch(product.type){
     default: vat = 0.21; break;}
     return vat; }
 
-console.log("Total VAT is  " + getTotalVat(product));
+console.log("Total VAT is  ", getTotalVat(product));

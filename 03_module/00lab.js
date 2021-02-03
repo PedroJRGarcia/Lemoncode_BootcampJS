@@ -12,5 +12,5 @@ switch(product.type){
     vat = productotal * 0.21; break;
 }
 
-console.log("Total to pay = " + (vat + productotal) + " €");
+console.log("Total to pay = ", vat + productotal, " €");
 
