@@ -3,9 +3,9 @@ var b = () => document.getElementById("b").value;
 var result = document.getElementById("total");
 
 var plus = () => parseInt(a()) + parseInt(b());
-var minus = () => a() - b();
-var multiplied = () => a() * b();
-var divided = () => a() / b();
+var minus = () => parseInt(a()) - parseInt(b());
+var multiplied = () => parseInt(a()) * parseInt(b());
+var divided = () => parseInt(a()) / parseInt(b());
 
 resultPlus = () => {
     result.innerText = a() !== "" && b() !== "" ? plus() : "Error";
