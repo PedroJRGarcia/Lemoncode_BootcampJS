@@ -24,25 +24,3 @@ document.getElementById("plusButton").addEventListener("click", resultPlus);
 document.getElementById("minusButton").addEventListener("click", resultMinus);
 document.getElementById("multipliedButton").addEventListener("click", resultMultiplied);
 document.getElementById("dividedButton").addEventListener("click", resultDivided);
-
-
-
-
-// function showResult() {
-//     if ((isNaN)(a())===false || (isNaN)(b())===false){
-//         result.innerText = "Error, select two numbers";
-//     }else if((isNaN)(a())===false && (isNaN)(b())===false){
-//         result.innerText = "Error, select two numbers";
-//     }else {
-//         showResult = resultTotal;
-//     }
-// }
-
-
-
-// var showTotal = {
-//     showPlus: document.getElementById("plusButton").addEventListener("click", resultPlus),
-//     showMinus: document.getElementById("minusButton").addEventListener("click", resultMinus),
-//     showMultiplied: document.getElementById("multipliedButton").addEventListener("click", resultMultiplied),
-//     showDivided: document.getElementById("dividedButton").addEventListener("click", resultDivided),
-// }
