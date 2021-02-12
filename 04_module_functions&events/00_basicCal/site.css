@@ -27,6 +27,7 @@ body {
     width: 50%;
     border: 1px solid gray;
     border-radius: 3px;
+    outline: none;
 }
 
 .box2 {
@@ -38,6 +39,7 @@ body {
     width: 50%; 
     border: 1px solid gray;
     border-radius: 3px;
+    outline: none;
 }
 
 .box3 {
@@ -51,6 +53,7 @@ body {
     border-radius: 3px;
     color: whitesmoke;
     cursor: pointer;
+    outline: none;
 }
 
 .operator:hover {

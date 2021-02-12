@@ -22,19 +22,6 @@ body {
     padding: 60px 10px;
 }
 
-.reset {
-    background-color: darkslategrey;
-    border: 1px solid lightgray;
-    color: whitesmoke;
-    cursor: pointer;
-}
-
-.reset:hover {
-    background-color: white;
-    color: black;
-    border: black solid 1px;
-}
-
 .firstNumber {
     height: 50px;
     width: 200px;
@@ -42,6 +29,7 @@ body {
     border-radius: 3px;
     font-size: 20px;
     text-align: center;
+    outline: none;
 }
 
 .box2 {
@@ -60,6 +48,7 @@ body {
     top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
+    outline: none;
 }
 
 .operator2 {
@@ -72,6 +61,7 @@ body {
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
+    outline: none;
 }
 
 .operator3 {
@@ -84,6 +74,7 @@ body {
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
+    outline: none;
 }
 
 .operator4 {
@@ -96,6 +87,7 @@ body {
     top: 50%;
     left: 70%;
     transform: translate(-50%, -50%);
+    outline: none;
 }
 .operator1:hover,
 .operator2:hover,
@@ -118,6 +110,7 @@ body {
     border-radius: 3px;
     color: whitesmoke;
     cursor: pointer;
+    outline: none;
 }
 
 .equal:hover {
