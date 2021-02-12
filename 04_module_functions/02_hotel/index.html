@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css".css">
+    <title>Hotel reservation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box0">
+            <h2>{ Hotel Reservation }</h2>
+            <hr class="line">
+        </div>
+        <div class="box1">
+            <div class="box2">
+                <h4>Room type</h4>
+                <select name="room" id="roomSelect">
+                    <option value="standard">Standard</option>
+                    <option value="junior">Junior Suite</option>
+                    <option value="suite">Suite</option>
+                </select>
+                <h4>Room size</h4>
+                <select name="room-size" id="sizeSelect">
+                    <option value="individual">Individual</option>
+                    <option value="double">Double</option>
+                    <option value="triple">Triple</option>
+                </select>
+            </div>
+            <div class="box3">
+                <label for="spa"><b>Spa service</b></label>
+                <input type="checkbox" name="spa" id="spa">
+            </div>
+            <div class="box4">
+                <label for="nights"><b>Nights with Parking place</b></label>
+                <input type="number" id="parking">
+            </div>
+            <div class="box5">
+                <label for="nights"><b>How many Nights would you like to stay?</b></label>
+                <input type="number" id="nights">
+            </div>
+                <div class="box6">
+                <label for="totalR"><button id="calculate"><b>Total Reservation</b></button></label>
+                <input type="text" value="" id="total">
+            </div>
+        </div>
+    </div>
+    <script src="02.js"></script>
+</body>
+</html>
