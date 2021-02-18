@@ -33,14 +33,18 @@ for (products of shoppingCart){
     }
 }
 
-function remove(){  
+function remove(productId){  
     for (i = 0; i < shoppingCart.length; i++){
-        if(shoppingCart[i]){
-            shoppingCart.splice(2,1);
-            break;
+        if(shoppingCart[i].id !== productId){
+            // shoppingCart.splice(2,1);
+            console.log(shoppingCart[i]);
         }
     }
     return;
+}
+
+function handlerRemove(){
+    remove(54657);
 }
 
 function filter(){
@@ -58,7 +62,7 @@ function totalP(){
 
 document.getElementById("add").addEventListener("click", totalP);
 document.getElementById("prime").addEventListener("click", filter);
-document.getElementById("remove").addEventListener("click", remove);
+document.getElementById("remove").addEventListener("click", handlerRemove);
 
 function costs(){
     var shippingCost = 0;
