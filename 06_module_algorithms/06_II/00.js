@@ -25,4 +25,4 @@ var messageLowercase = text => {
 }
 
 document.getElementById("encrypt").addEventListener("click", messageLowercase);
-// document.getElementById("decrypt").addEventListener("click", messageLowercase);
+document.getElementById("decrypt").addEventListener("click", messageLowercase);
