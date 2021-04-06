@@ -42,7 +42,7 @@ var moneyChange = () => {
     var givenMoney = [];
     var i = 0;
         while(amount > 0 && i < arr.length){
-            if(arr[i].value <= amount){
+            if (arr[i].value <= amount){
                 var rest = epsilon(amount % arr[i].value);
                 var neededQty = epsilon((amount - rest)/arr[i].value);
                 var availableQty = arr[i].qty;
@@ -52,17 +52,15 @@ var moneyChange = () => {
                 arr2.push(getMessage(qty, "coin", arr[i].value));
                 amount = epsilon(amount - (qty * arr[i].value));
                 givenMoney.push("Amount of " + arr[i].value + " € left: " + (arr[i].qty - qty));
+                document.getElementById("result").innerHTML = arr2.join('<br>');
+                document.getElementById("result").innerHTML += ('<br>') + "Cash register: " + givenMoney.join('<br>');
+                cleanInput();
+            } else {
+                document.getElementById("result").innerHTML = "Not enough money left. Amount: " + amount;
+                cleanInput();
             }
             i++;
         } 
-        if (amount === 0) {
-            document.getElementById("result").innerHTML = arr2.join('<br>');
-            document.getElementById("result").innerHTML += ('<br>') + "Cash register: " + givenMoney.join('<br>');
-            cleanInput();
-        } else {
-            document.getElementById("result").innerHTML = "Not enough money left. Amount: " + amount;
-            cleanInput();
-        }
 };
 var cleanInput = () => { 
     total.value = "";
