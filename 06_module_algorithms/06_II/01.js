@@ -21,5 +21,11 @@ var messageDecrypt = text => {
     return document.getElementById("text1").value = result;
 }
 
+var cleanInputs = () => {
+    document.getElementById("text1").value = "";
+    document.getElementById("text2").value = "";
+}
+
 document.getElementById("encrypt").addEventListener("click", messageEncrypt);
 document.getElementById("decrypt").addEventListener("click", messageDecrypt);
+document.getElementById("remove").addEventListener("click", cleanInputs);
