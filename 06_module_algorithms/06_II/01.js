@@ -1,7 +1,7 @@
 var alphabet1 = "abcdefghijklmnopqrstuvwxyz:()!¡,' ";
 var alphabet2 = "qw,ert(yuio'pa:sdfg!hjklz¡xcv)bnm ";
 
-var messageLowercase = text => {
+var messageEncrypt = text => {
     var text = document.getElementById("text1").value;
     var textLowercase = text.toLowerCase();
     var result = "";
@@ -11,5 +11,15 @@ var messageLowercase = text => {
     return document.getElementById("text2").value = result;
 }
 
-document.getElementById("encrypt").addEventListener("click", messageLowercase);
-document.getElementById("decrypt").addEventListener("click", messageLowercase);
+var messageDecrypt = text => {
+    var text = document.getElementById("text2").value;
+    var textLowercase = text.toLowerCase();
+    var result = "";
+    for(letter of textLowercase){
+        result += alphabet1[alphabet2.indexOf(letter)];
+    }
+    return document.getElementById("text1").value = result;
+}
+
+document.getElementById("encrypt").addEventListener("click", messageEncrypt);
+document.getElementById("decrypt").addEventListener("click", messageDecrypt);
