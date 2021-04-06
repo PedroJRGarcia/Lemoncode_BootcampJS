@@ -14,7 +14,13 @@ var encryptLetter = letter => {
     return encryptedLetter;
 }
 
-var messageLowercase = text => {
+var decryptLetter = letter => {
+    var letterIndex = searchIndex(alphabet2, letter);
+    var decryptedLetter = alphabet1[letterIndex];
+    return decryptedLetter;
+}
+
+var messageEncrypted = text => {
     var text = document.getElementById("text1").value;
     var textLowercase = text.toLowerCase();
     var result = "";
@@ -24,5 +30,21 @@ var messageLowercase = text => {
     return document.getElementById("text2").value = result;
 }
 
-document.getElementById("encrypt").addEventListener("click", messageLowercase);
-document.getElementById("decrypt").addEventListener("click", messageLowercase);
+var messageDecrypted = text => {
+    var text = document.getElementById("text2").value;
+    var textLowercase = text.toLowerCase();
+    var result = "";
+    for(letter of textLowercase){
+        result = result + decryptLetter(letter);
+    }
+    return document.getElementById("text1").value = result;
+}
+
+var cleanInputs = () => {
+    document.getElementById("text1").value = "";
+    document.getElementById("text2").value = "";
+}
+
+document.getElementById("encrypt").addEventListener("click", messageEncrypted);
+document.getElementById("decrypt").addEventListener("click", messageDecrypted);
+document.getElementById("remove").addEventListener("click", cleanInputs);
