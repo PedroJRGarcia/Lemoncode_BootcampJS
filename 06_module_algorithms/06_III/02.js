@@ -41,7 +41,7 @@ var moneyChange = () => {
     var amount = given.value - total.value;
     var givenMoney = [];
     var i = 0;
-        while(amount > 0 && i < arr.length){
+        do {
             if (arr[i].value <= amount){
                 var rest = epsilon(amount % arr[i].value);
                 var neededQty = epsilon((amount - rest)/arr[i].value);
@@ -60,7 +60,7 @@ var moneyChange = () => {
                 cleanInput();
             }
             i++;
-        } 
+        } while(amount > 0 && i < arr.length);
 };
 var cleanInput = () => { 
     total.value = "";
