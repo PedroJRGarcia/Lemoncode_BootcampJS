@@ -42,15 +42,15 @@ var moneyChange = () => {
     var givenMoney = [];
     var i = 0;
         do {
-            if (arr[i].value <= amount){
-                var rest = epsilon(amount % arr[i].value);
+            if (arr[i].value <= amount && amount > 0){
+                var rest = amount % arr[i].value;
                 var neededQty = epsilon((amount - rest)/arr[i].value);
                 var availableQty = arr[i].qty;
                 var qty = getQuantity(neededQty, availableQty);
                 arr[i].value > 4 ? 
                 arr2.push(getMessage(qty, "bill", arr[i].value)):
                 arr2.push(getMessage(qty, "coin", arr[i].value));
-                amount = epsilon(amount - (qty * arr[i].value));
+                amount = amount - (qty * arr[i].value);
                 givenMoney.push("Amount of " + arr[i].value + " € left: " + (arr[i].qty - qty));
                 document.getElementById("result").innerHTML = arr2.join('<br>');
                 document.getElementById("result").innerHTML += ('<br>') + "Cash register: " + givenMoney.join('<br>');
@@ -60,7 +60,7 @@ var moneyChange = () => {
                 cleanInput();
             }
             i++;
-        } while(amount > 0 && i < arr.length);
+        } while(i < arr.length);
 };
 var cleanInput = () => { 
     total.value = "";
