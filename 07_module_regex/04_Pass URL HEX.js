@@ -6,10 +6,14 @@ passwordValues.forEach(value => {
     console.log(`medium pattern matchs with "${value}" ? `, mediumPass.test(value));
 });
 
-const urlRegex = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+const urlRegex = /^(http(s)?:\/\/)?([w]{3})?\.?.{1,}(\.net)/;
+const urlRegex2 = /^(http(s)?:\/\/)?[w]{3}\.?.{1,}(\.net)/;
 const urlValues = ['www.lemoncode.net', 'https://www.lemoncode.net', 'lemoncode.net'];
 urlValues.forEach(value => {
     console.log(`Regex pattern matchs with "${value}" : `, urlRegex.test(value));
+});
+urlValues.forEach(value => {
+    console.log(`Regex pattern 2 matchs with "${value}" : `, urlRegex2.test(value));
 });
 
 const patternHex = /^#+([a-f0-9]{6}|[a-f0-9]{3})$/i;
