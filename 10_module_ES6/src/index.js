@@ -63,8 +63,7 @@ console.log(swapFirstSecond(numbers));
 
 //11. firstEqual
 
-const firstEqual = ([...strings], x) => strings
-    .map(string => string[0] === x ? true : false);
+const firstEqual = ([...strings], x) => strings.map(string => string[0] === x);
 console.log(firstEqual(strings, "t"));
 
 //12. longest
@@ -128,7 +127,6 @@ const subtotalDrugstore = items => items
 console.log(subtotalDrugstore(shoppingCart));
 
 //D. Total Price
-
 
 const getTotal = (iva, items) => items
     .map(item => ({...item, 
