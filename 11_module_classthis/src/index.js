@@ -33,34 +33,26 @@ class Booking {
             case 'suite':
                 return 150;
         }
-        return 0;
+        return 1;
     }
 
-    includeBreakfast = breakfast => breakfast ? 15 : 0 
+    includeBreakfast = breakfast => breakfast ? 15 : 0;
 
-    aditionalPax = pax => pax > 1 ? (pax - 1) * 40 : 0
+    aditionalPax = pax => pax > 1 ? (pax - 1) * 40 : 0;
 
     calculateSubtotal() {
-        this._subtotal = bookings.map(booking =>
-            booking.nightStay * (
-            this.roomPrice(booking.roomType) + 
-            this.aditionalPax(booking.pax) + 
-            this.includeBreakfast(booking.breakfast) *
-            booking.pax
-            )
-        );
+        this._subtotal = this._bookings.reduce((acu, { roomType, nightStay, pax, breakfast }) =>
+            acu +
+            nightStay *
+            this.roomPrice(roomType) + 
+            this.aditionalPax(pax) + 
+            this.includeBreakfast(breakfast) *
+            pax
+            , 0)
     }
 
     calculateTotal() {
-        this._total = bookings.map(booking =>
-            booking.nightStay * (
-            this.roomPrice(booking.roomType) + 
-            this.aditionalPax(booking.pax) + 
-            this.includeBreakfast(booking.breakfast) *
-            booking.pax
-            ) * 1.21 
-            //como puedo escribir este código sin repetir toto lo de subtotal?
-        );
+        this._total = this._subtotal * 1.21;
     }
 
     get subtotal() {
@@ -85,7 +77,7 @@ class TourOperator extends Booking {
     // }
     //en vez del 0.85 del discount (15% escrito a fuego), me gustaría escribir (1 - dis),
     //y escribir, dado el caso, el % que se desea, new TourOperator(0.15)
-    roomPrice(roomType) { return roomType = 100 }
+    roomPrice(roomType) {return roomType = 100 }
 
     includeBreakfast = breakfast => breakfast ? 15 * 0.85 : 0 
 
