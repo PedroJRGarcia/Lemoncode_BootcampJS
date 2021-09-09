@@ -77,7 +77,7 @@ class TourOperator extends Booking {
     // }
     //en vez del 0.85 del discount (15% escrito a fuego), me gustaría escribir (1 - dis),
     //y escribir, dado el caso, el % que se desea, new TourOperator(0.15)
-    roomPrice(roomType) {return roomType = 100 }
+    roomPrice = roomType => {return roomType = 100 }
 
     includeBreakfast = breakfast => breakfast ? 15 * 0.85 : 0 
 
