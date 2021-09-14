@@ -8,5 +8,5 @@ export const getMovementsList = id => {
 }
 
 export const getAccount = id => {
-    return Axios.get(`${url2}/${id}`).then(({data}) => data);
+    return Axios.get(`${url2}/${id}`).then(({ data }) => data);
 }
