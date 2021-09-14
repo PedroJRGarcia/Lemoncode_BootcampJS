@@ -1,4 +1,12 @@
-const mapMovementsFromApiToVm = movements => {
+export const mapAccountApiToVm = headers => {
+    return {
+        alias: headers.name,
+        balance: `${headers.balance} €`,
+        iban: headers.iban,
+    };
+};
+
+const mapMovementsApiToVm = movements => {
     return {
         id: movements.id,
         transaction: new Date(movements.transaction)
@@ -11,7 +19,7 @@ const mapMovementsFromApiToVm = movements => {
     };
 };
 
-export const mapMovementsListFromApiToVm = movementsList => {
+export const mapMovementsListApiToVm = movementsList => {
     return movementsList.map(movements => 
-        mapMovementsFromApiToVm(movements));
+        mapMovementsApiToVm(movements));
 }

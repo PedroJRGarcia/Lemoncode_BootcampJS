@@ -1,19 +1,20 @@
-import { getMovementsList } from './movements.api';
+import { getAccount, getMovementsList } from './movements.api';
 import { addMovementRows } from './movements.helpers';
-import { mapMovementsListFromApiToVm } from './movements.mappers';
-import { onUpdateField } from '../../common/helpers';
+import { mapMovementsListApiToVm, mapAccountApiToVm } from './movements.mappers';
 import { history } from '../../core/router';
+import { onSetValues } from '../../common/helpers';
 
-getMovementsList().then(movementsList => {
-    console.log({ movementsList });
-    const viewModelMovementsList = mapMovementsListFromApiToVm(movementsList);
-    addMovementRows(viewModelMovementsList);
+const params = history.getParams();
+const is = Boolean(params.id);
 
-    // viewModelMovementsList.forEach(movements => {
-    //     onUpdateField(`${movements.id}`, event => {
-    //         const route = event.target.value;
-    //         history.push(route);
-    //     });
-    // }); 
-    //movement-list
-});
+if(is) {
+    getMovementsList(params.id).then(movementsList => {
+        const viewModelMovementsList = mapMovementsListApiToVm(movementsList);
+        addMovementRows(viewModelMovementsList);
+    });
+
+    getAccount(params.id).then(account => {
+        const viewModelAccount = mapAccountApiToVm(account);
+        onSetValues(viewModelAccount);
+    }); 
+}
