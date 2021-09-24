@@ -47,6 +47,12 @@
       "balance": 0,
       "lastTransaction": "2021-09-05T15:50:49.608Z",
       "id": "lQ_JMme"
+    },
+    {
+      "iban": "IS92 6659 7008 7009 6561 0020 04",
+      "balance": 0,
+      "lastTransaction": "2021-09-24T20:06:17.575Z",
+      "id": "AnOJqXa"
     }
   ],
   "movements": [

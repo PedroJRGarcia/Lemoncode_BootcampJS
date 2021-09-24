@@ -1,5 +1,4 @@
 import { Validators, createFormValidation } from '@lemoncode/fonk';
-// import { ibanValidator } from '.@lemoncode/fonk/custom-validator';
 
 const validationSchema = {
     field: {
@@ -7,8 +6,8 @@ const validationSchema = {
             validator: Validators.required,
             message: 'Required field',
         }, {
-            validator: ibanValidator,
-            message: 'Incorrect IBAN',
+            validator: Validators.pattern,
+            customArgs: { pattern: '/^[A-Z]{2}[0-9A-Z]*$/' },
         }],
         name: [{
             validator: Validators.required,
@@ -17,7 +16,7 @@ const validationSchema = {
         amount: [{
             validator: Validators.required,
             message: 'Required field',
-        }, {}],
+        }],
         concept: [{
             validator: Validators.required,
             mmessage: 'Required field',
@@ -25,18 +24,21 @@ const validationSchema = {
         day: [{
             validator: Validators.required,
             message: 'Required field',
-        }, {}],
+        }],
         month: [{
             validator: Validators.required,
             message: 'Required field',
-        }, {}],
+        }],
         year: [{
             validator: Validators.required,
             message: 'Required field',
-        }, {}],
+        }],
         email: [{
             validator: Validators.email,
             message: 'No Valid Email',
+        }, {
+            validator: Validators.required,
+            message: 'Required field',
         }],
     }
 };

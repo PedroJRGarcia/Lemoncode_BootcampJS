@@ -1,4 +1,4 @@
-import { getAccount } from './transfer.api';
+import { getAccount, insertTransfer } from './transfer.api';
 import { setAccountOptions } from './transfer.helpers';
 import { onUpdateField, onSetError, onSetFormErrors, onSubmitForm } from '../../common/helpers';
 import { history } from '../../core/router';
@@ -21,6 +21,7 @@ let transfer = {
 };
 
 getAccount().then(account => {
+    console.log(account);
     setAccountOptions(account, params.id);
 });
 
@@ -153,7 +154,9 @@ onSubmitForm('transfer-button', () => {
     formValidation.validateForm(transfer).then(result => {
         onSetFormErrors(result);
         if (result.succeeded) {
-
+            insertTransfer(transfer);
+            console.log(transfer)
+            alert(' Successful Transfer ')
         }
     });
 });
