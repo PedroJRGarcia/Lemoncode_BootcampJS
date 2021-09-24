@@ -156,7 +156,7 @@ onSubmitForm('transfer-button', () => {
         if (result.succeeded) {
             insertTransfer(transfer);
             console.log(transfer)
-            alert(' Successful Transfer ')
+            alert('Successful Transfer')
         }
     });
 });
