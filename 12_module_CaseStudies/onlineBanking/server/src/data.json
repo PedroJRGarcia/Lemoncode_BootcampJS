@@ -47,18 +47,6 @@
       "balance": 0,
       "lastTransaction": "2021-09-05T15:50:49.608Z",
       "id": "lQ_JMme"
-    },
-    {
-      "iban": "IS92 6659 7008 7009 6561 0020 04",
-      "balance": 0,
-      "lastTransaction": "2021-09-24T20:06:17.575Z",
-      "id": "AnOJqXa"
-    },
-    {
-      "iban": "XK30 8333 4587 0070 4087",
-      "balance": 0,
-      "lastTransaction": "2021-09-25T17:10:42.104Z",
-      "id": "DmhXE38"
     }
   ],
   "movements": [
@@ -144,5 +132,20 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "selectAccount": "",
+      "iban": "ES1023090990909090909090",
+      "name": "Pedro Jose Rodriguez Garcia",
+      "amount": "1000",
+      "concept": "Alquiler",
+      "notes": "Ninguna",
+      "day": "28",
+      "month": "09",
+      "year": "2021",
+      "date": "28/09/2021",
+      "email": "pedro@email.com",
+      "id": 1
+    }
+  ]
 }
