@@ -1,4 +1,4 @@
-import * as Axios from 'axios';
+import Axios from 'axios';
 
 const propertyListUrl = `${process.env.BASE_API_URL}/properties?`;
 

@@ -10,7 +10,7 @@ const mapPropertyFromApiToVm = property => {
     }
 }
 
-const getRoomWord = rooms => rooms > 1 ? 'Habitaciones' : 'Habitación';
+const getRoomWord = rooms => rooms > 1 ? 'habitaciones' : 'habitación';
 
 export const mapPropertyListFromApiToVm = propertyList => {
     return propertyList.map(property => mapPropertyFromApiToVm(property));

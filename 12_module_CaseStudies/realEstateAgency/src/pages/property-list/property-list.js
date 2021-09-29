@@ -35,7 +35,7 @@ let filter = {
 
 onUpdateField('select-sale-type', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         saleTypeId: value,
     };
@@ -43,7 +43,7 @@ onUpdateField('select-sale-type', event => {
 
 onUpdateField('select-province', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         provinceId: value,
     };
@@ -51,7 +51,7 @@ onUpdateField('select-province', event => {
 
 onUpdateField('select-room', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         minRooms: value,
     };
@@ -59,7 +59,7 @@ onUpdateField('select-room', event => {
 
 onUpdateField('select-bathroom', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         minBathRooms: value,
     };
@@ -67,7 +67,7 @@ onUpdateField('select-bathroom', event => {
 
 onUpdateField('select-min-price', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         minPrice: value,
     };
