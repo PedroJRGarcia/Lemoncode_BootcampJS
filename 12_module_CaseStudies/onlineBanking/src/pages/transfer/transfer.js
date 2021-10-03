@@ -30,7 +30,7 @@ onUpdateField('select-account', event => {
     transfer = {
         ...transfer,
         selectAccount: value,
-    }
+    };
 });
 
 onUpdateField('iban', event => {
@@ -38,7 +38,7 @@ onUpdateField('iban', event => {
     transfer = {
         ...transfer,
         iban: value,
-    }
+    };
 
     formValidation.validateField('iban', transfer.iban).then(result => {
         onSetError('iban', result);
@@ -50,7 +50,7 @@ onUpdateField('name', event => {
     transfer = {
         ...transfer,
         name: value,
-    }
+    };
 
     formValidation.validateField('name', transfer.name).then(result => {
         onSetError('name', result);
@@ -62,7 +62,7 @@ onUpdateField('amount', event => {
     transfer = {
         ...transfer,
         amount: value,
-    }
+    };
 
     formValidation.validateField('amount', transfer.amount).then(result => {
         onSetError('amount', result);
@@ -74,7 +74,7 @@ onUpdateField('concept', event => {
     transfer = {
         ...transfer,
         concept: value,
-    }
+    };
 
     formValidation.validateField('concept', transfer.concept).then(result => {
         onSetError('concept', result);
@@ -86,7 +86,7 @@ onUpdateField('notes', event => {
     transfer = {
         ...transfer,
         notes: value,
-    }
+    };
 });
 
 onUpdateField('day', event => {
@@ -94,7 +94,7 @@ onUpdateField('day', event => {
     transfer = {
         ...transfer,
         day: value,
-    }
+    };
 
     formValidation.validateField('day', transfer.day).then(result => {
         onSetError('day', result);
@@ -106,7 +106,7 @@ onUpdateField('month', event => {
     transfer = {
         ...transfer,
         month: value,
-    }
+    };
 
     formValidation.validateField('month', transfer.month).then(result => {
         onSetError('month', result);
@@ -118,7 +118,7 @@ onUpdateField('year', event => {
     transfer = {
         ...transfer,
         year: value,
-    }
+    };
 
     formValidation.validateField('year', transfer.year).then(result => {
         onSetError('year', result);
@@ -142,7 +142,7 @@ onUpdateField('email', event => {
     transfer = {
         ...transfer,
         email: value,
-    }
+    };
 
     formValidation.validateField('email', transfer.email).then(result => {
         onSetError('email', result);
