@@ -58,7 +58,7 @@ onSubmitForm('save-button', () => {
     formValidation.validateForm(account).then(result => {
         onSetFormErrors(result);
         if(result.succeeded) {
-            onSave().then(() => {
+            onSave(apiContact).then(() => {
                 history.back();
             });
         }

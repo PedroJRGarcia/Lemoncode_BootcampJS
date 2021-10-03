@@ -1,5 +1,5 @@
-import { getPropertyDetail } from './property-detail.api';
-import { mapPropertyDetailApiToVm } from './property-detail.mappers';
+import { getPropertyDetail, insertMessage } from './property-detail.api';
+import { mapPropertyDetailApiToVm, mapContactVmToApi } from './property-detail.mappers';
 import { formValidation } from './property-detail.validations';
 import { setPropertyValues } from './property-detail.helpers';
 import { history } from '../../core/router';
@@ -48,8 +48,13 @@ onUpdateField('message', event => {
 onSubmitForm('contact-button', () => {
     formValidation.validateForm(contact).then(result => {
         onSetFormErrors(result);
-        if (result.succeeded) {
+        const apiContact = mapContactVmToApi(contact);
 
+        if (result.succeeded) {
+            console.log({ contact });
+            insertMessage(apiContact).then(() => {
+                history.back();
+            });
         }
     });
 });

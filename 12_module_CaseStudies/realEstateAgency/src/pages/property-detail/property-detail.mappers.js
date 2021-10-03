@@ -12,8 +12,16 @@ export const mapPropertyDetailApiToVm = propertyDetail => {
         mainFeatures: propertyDetail.mainFeatures,
         equipmentIds: propertyDetail.equipmentIds,
         locationUrl: propertyDetail.locationUrl,
-    }
-}
+    };
+};
 
 const getRoomWord = rooms => rooms > 1 ? 'habitaciones' : 'habitación';
 const getBathRoomWord = bathrooms => bathrooms > 1 ? 'baños' : 'baño';
+
+export const mapContactVmToApi = contact => {
+    return {
+        id: contact.id,
+        email: contact.email,
+        message: contact.message,
+    };
+};
