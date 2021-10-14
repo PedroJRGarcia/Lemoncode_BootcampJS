@@ -1,4 +1,4 @@
-import { getPropertyDetail, insertMessage } from './property-detail.api';
+import { getPropertyDetail, getEquipmentDetail, insertMessage} from './property-detail.api';
 import { mapPropertyDetailApiToVm, mapContactVmToApi } from './property-detail.mappers';
 import { formValidation } from './property-detail.validations';
 import { setPropertyValues } from './property-detail.helpers';
@@ -12,11 +12,13 @@ let contact = {
 
 const params = history.getParams();
 
-Promise.all([getPropertyDetail(params.id)]).then(([propertyDetail]) => {
-    loadPropertyDetail(propertyDetail);
+Promise.all([getPropertyDetail(params.id), getEquipmentDetail()]).then(([propertyDetail, equipmentList]) => {
+    console.log(params.id);
+    loadPropertyDetail(propertyDetail, equipmentList);
 });
 
 const loadPropertyDetail = propertyList => {
+    console.log(propertyList);
     const vmPropertyDetailList = mapPropertyDetailApiToVm(propertyList);
     setPropertyValues(vmPropertyDetailList);
 };

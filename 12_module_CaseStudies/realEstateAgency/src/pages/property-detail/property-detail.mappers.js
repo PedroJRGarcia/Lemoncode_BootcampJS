@@ -1,22 +1,32 @@
-export const mapPropertyDetailApiToVm = propertyDetail => {
+export const mapPropertyDetailApiToVm = (propertyDetail, equipmentList) => {
     return {
         id: propertyDetail.id,
         title: propertyDetail.title,
         city: propertyDetail.city,
         rooms: `${propertyDetail.rooms} ${getRoomWord(propertyDetail.rooms)}`,
         bathrooms: `${propertyDetail.bathrooms} ${getBathRoomWord(propertyDetail.bathrooms)}`,
-        squareMeter: `${property.squareMeter} m2`,
-        notes:`${property.notes}`,
-        price: `${property.price.toLocaleString()} €`,
-        image: Array.isArray(property.images) ? property.images[0] : '',
+        squareMeter: `${propertyDetail.squareMeter} m2`,
+        notes:`${propertyDetail.notes}`,
+        price: `${propertyDetail.price.toLocaleString()} €`,
+        mainImage: Array.isArray(propertyDetail.images) ? propertyDetail.images[0] : '',
+        images: Array.isArray(propertyDetail.images) ? propertyDetail.images : '',
         mainFeatures: propertyDetail.mainFeatures,
-        equipmentIds: propertyDetail.equipmentIds,
+        equipmentIds: getEquipments(propertyDetail.equipmentIds, equipmentList),
         locationUrl: propertyDetail.locationUrl,
     };
 };
 
 const getRoomWord = rooms => rooms > 1 ? 'habitaciones' : 'habitación';
 const getBathRoomWord = bathrooms => bathrooms > 1 ? 'baños' : 'baño';
+
+const getEquipments = (equipmentIds, equipmentList) => {
+    const x = equipmentIds.map(id => {
+        equipmentList.find(equipment => {
+            return id === equipment.id ? equipment.name : '';
+        })
+    })
+    return x;
+}
 
 export const mapContactVmToApi = contact => {
     return {
