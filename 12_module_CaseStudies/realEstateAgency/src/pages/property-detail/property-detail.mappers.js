@@ -20,12 +20,12 @@ const getRoomWord = rooms => rooms > 1 ? 'habitaciones' : 'habitación';
 const getBathRoomWord = bathrooms => bathrooms > 1 ? 'baños' : 'baño';
 
 const getEquipments = (equipmentIds, equipmentList) => {
-    const x = equipmentIds.map(id => {
+    const equipmentDetail = equipmentIds.map(id => {
         equipmentList.find(equipment => {
             return id === equipment.id ? equipment.name : '';
         })
     })
-    return x;
+    return equipmentDetail;
 }
 
 export const mapContactVmToApi = contact => {
