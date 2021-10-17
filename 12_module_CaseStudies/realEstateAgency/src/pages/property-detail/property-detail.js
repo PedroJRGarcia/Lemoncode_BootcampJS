@@ -17,9 +17,9 @@ Promise.all([getPropertyDetail(params.id), getEquipmentDetail()]).then(([propert
     loadPropertyDetail(propertyDetail, equipmentList);
 });
 
-const loadPropertyDetail = propertyList => {
+const loadPropertyDetail = (propertyList, equipmentList) => {
     console.log(propertyList);
-    const vmPropertyDetailList = mapPropertyDetailApiToVm(propertyList);
+    const vmPropertyDetailList = mapPropertyDetailApiToVm(propertyList, equipmentList);
     setPropertyValues(vmPropertyDetailList);
 };
 
