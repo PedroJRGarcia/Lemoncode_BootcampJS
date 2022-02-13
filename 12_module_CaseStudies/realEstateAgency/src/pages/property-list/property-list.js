@@ -1,12 +1,12 @@
-import { getPropertyList, getsaleTypeList, getProvinceList } from './property-list.api';
-import { mapPropertyListFromApiToVm, mapFilterToQueryParams } from './property-list.mappers';
+import { getPropertyList, getSaleTypeList, getProvinceList } from './property-list.api';
+import { mapPropertyListFromApiToViewModel, mapFilterToQueryParams } from './property-list.mappers'; 
 import { addPropertyRows, setOptions, clearPropertyRows } from './property-list.helpers';
 import { roomOptions, bathroomOptions, minPriceOptions, maxPriceOptions } from './property-list.constants';
 import { onUpdateField, onSubmitForm } from '../../common/helpers';
 
 Promise.all([
     getPropertyList(),
-    getsaleTypeList(),
+    getSaleTypeList(),
     getProvinceList(),
 ]).then(([propertyList, saleTypeList, provinceList]) => {
     loadPropertyList(propertyList);
@@ -16,13 +16,12 @@ Promise.all([
     setOptions(bathroomOptions, 'select-bathroom', '¿Cuartos de baño?');
     setOptions(minPriceOptions, 'select-min-price', 'Min (EUR)');
     setOptions(maxPriceOptions, 'select-max-price', 'Max (EUR)');
-    }
-);
+});
 
-const loadPropertyList = propertyList => {
-    const vmPropertyList = mapPropertyListFromApiToVm(propertyList);
-    addPropertyRows(vmPropertyList);
-};
+const loadPropertyList = (propertyList => {
+    const viewModelPropertyList = mapPropertyListFromApiToViewModel(propertyList);
+    addPropertyRows(viewModelPropertyList);
+});
 
 let filter = {
     saleTypeId: '',
@@ -33,7 +32,7 @@ let filter = {
     maxPrice: '',
 };
 
-onUpdateField('select-sale-type', event => {
+onUpdateField('select-sale-type', (event) => {
     const value = event.target.value;
     filter = {
         ...filter,
@@ -75,17 +74,16 @@ onUpdateField('select-min-price', event => {
 
 onUpdateField('select-max-price', event => {
     const value = event.target.value;
-    let filter = {
+    filter = {
         ...filter,
         maxPrice: value,
     };
 });
 
 onSubmitForm('search-button', () => {
-    console.log({ filter });
     const queryParams = mapFilterToQueryParams(filter);
     clearPropertyRows();
-
+    
     getPropertyList(queryParams).then(propertyList => {
         loadPropertyList(propertyList);
     });

@@ -5,9 +5,10 @@ const validationSchema = {
         email: [{
             validator: Validators.required,
             message: 'Required field',
-        }, {
+        },
+        {
             validator: Validators.email,
-            message: 'No Valid Email'
+            message: 'No valid email',
         }],
         message: [{
             validator: Validators.required,

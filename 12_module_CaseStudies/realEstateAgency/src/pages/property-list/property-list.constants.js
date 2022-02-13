@@ -20,6 +20,7 @@ export const roomOptions = [
         name: '+5',
     },
 ];
+
 export const bathroomOptions = [
     {
         id: '1',
@@ -42,6 +43,7 @@ export const bathroomOptions = [
         name: '+5',
     },
 ];
+
 export const minPriceOptions = [
     {
         id: '300',
@@ -72,6 +74,7 @@ export const minPriceOptions = [
         name: '2.500 €',
     },
 ];
+
 export const maxPriceOptions = [
     {
         id: '100000',
@@ -86,8 +89,8 @@ export const maxPriceOptions = [
         name: '140.000 €',
     },
     {
-        id: '160000',
-        name: '160.000 €',
+        id: '180000',
+        name: '180.000 €',
     },
     {
         id: '200000',

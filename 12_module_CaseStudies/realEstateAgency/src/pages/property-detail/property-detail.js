@@ -1,4 +1,4 @@
-import { getPropertyDetail, getEquipmentDetail, insertMessage} from './property-detail.api';
+import { getPropertyDetail, getEquipmentDetail, insertMessage } from './property-detail.api';
 import { mapPropertyDetailApiToVm, mapContactVmToApi } from './property-detail.mappers';
 import { formValidation } from './property-detail.validations';
 import { setPropertyValues } from './property-detail.helpers';
@@ -12,8 +12,10 @@ let contact = {
 
 const params = history.getParams();
 
-Promise.all([getPropertyDetail(params.id), getEquipmentDetail()]).then(([propertyDetail, equipmentList]) => {
-    console.log(params.id);
+Promise.all([
+    getPropertyDetail(params.id), 
+    getEquipmentDetail(),
+]).then(([propertyDetail, equipmentList]) => {
     loadPropertyDetail(propertyDetail, equipmentList);
 });
 
@@ -48,12 +50,11 @@ onUpdateField('message', event => {
 });
 
 onSubmitForm('contact-button', () => {
-    formValidation.validateForm(contact).then(result => {
+    formValidation.validateField(contact).then(result => {
         onSetFormErrors(result);
-        const apiContact = mapContactVmToApi(contact);
-
-        if (result.succeeded) {
-            console.log({ contact });
+        const apiContact = mapContactVmToApi({contact});
+        
+        if(result.succeeded) {
             insertMessage(apiContact).then(() => {
                 history.back();
             });
