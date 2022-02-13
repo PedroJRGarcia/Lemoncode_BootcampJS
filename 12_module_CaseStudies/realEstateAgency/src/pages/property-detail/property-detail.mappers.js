@@ -19,8 +19,8 @@ export const mapPropertyDetailApiToVm = (propertyDetail, equipmentList) => {
 const getRoomWord = rooms => rooms > 1 ? 'habitaciones' : 'habitación';
 const getBathRoomWord = bathrooms => bathrooms > 1 ? 'baños' : 'baño';
 
-const getEquipments = (equipmentIds, equipmentList) => {
-    const equipmentDetail = equipmentIds.map(id => {
+const getEquipments = (properties, equipmentList) => {
+    const equipmentDetail = properties.map(id => {
         return equipmentList.find(equipment => equipment.id === id).name;
     });
     return equipmentDetail;
