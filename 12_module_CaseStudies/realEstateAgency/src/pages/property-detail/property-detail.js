@@ -50,9 +50,9 @@ onUpdateField('message', event => {
 });
 
 onSubmitForm('contact-button', () => {
-    formValidation.validateField(contact).then(result => {
+    formValidation.validateForm(contact).then(result => {
         onSetFormErrors(result);
-        const apiContact = mapContactVmToApi({contact});
+        const apiContact = mapContactVmToApi(contact);
         
         if(result.succeeded) {
             insertMessage(apiContact).then(() => {
