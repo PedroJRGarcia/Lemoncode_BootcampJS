@@ -32,6 +32,26 @@ let filter = {
     maxPrice: '',
 };
 
+// const filterValues = [
+//     {id: 'select-sale-type', name: saleTypeId},
+//     {id: 'select-province', name: provinceId},
+//     {id: 'select-room', name: minRooms},
+//     {id: 'select-bathroom', name: minBathRooms},
+//     {id: 'select-min-price', name: minPrice},
+//     {id: 'select-max-price', name: maxPrice}
+// ];
+
+// for (let param of filterValues) {
+//     onUpdateField(param.id, event => {
+//         const value = event.target.value;
+//         const paramName = param.name;
+//         filter = {
+//             ...filter,
+//             [paramName]: value,
+//         }
+//     });
+// }
+
 onUpdateField('select-sale-type', (event) => {
     const value = event.target.value;
     filter = {
