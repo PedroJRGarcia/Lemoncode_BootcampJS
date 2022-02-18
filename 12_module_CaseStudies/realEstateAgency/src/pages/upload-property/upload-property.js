@@ -20,7 +20,7 @@ let newProperty = {
     saleTypes: [],
     address: '',
     city: '',
-    provinceId: '',
+    province: '',
     squareMeter: '',
     rooms: '',
     bathrooms: '',
@@ -31,7 +31,7 @@ let newProperty = {
 };
 
 const onUpdateValues = ['title', 'notes', 'email', 'phone', 'saleTypes', 'price',
-'address', 'city', 'provinceId', 'squareMeter', 'rooms', 'bathrooms', 'locationUrl',
+'address', 'city', 'province', 'squareMeter', 'rooms', 'bathrooms', 'locationUrl',
 'mainFeatures'];
 
 Promise.all([getProvincesList(), getEquipments(), getSaleTypes()]).then(
