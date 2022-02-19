@@ -32,7 +32,7 @@ const validationSchema = {
             message: 'Required field',
         },{
             validator: Validators.pattern,
-            customArgs: { pattern: /^(6|7)\d{8}$/ },
+            customArgs: { pattern: /^(6|7|8|9)\d{8}$/ },
             message: 'Please, type a valid phone number',
         }],
         price: [{
@@ -98,7 +98,7 @@ const validationSchema = {
             message: 'Required field',
         },{
             validator: Validators.pattern,
-            customArgs: { pattern: /^(http|https)\:\/\/www\.google\.com\/maps\/?/},
+            customArgs: { pattern: /^(http|https)\:\/\/www\.google\.com\/maps\// },
         }],
     },
 };
