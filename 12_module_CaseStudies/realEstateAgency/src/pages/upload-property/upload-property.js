@@ -31,8 +31,8 @@ let newProperty = {
     images: [],
 };
 
-const onUpdateValues = ['title', 'notes', 'email', 'phone', 'price', 'saleTypes',
-'address', 'city', 'province', 'squareMeter', 'rooms', 'bathrooms', 'locationUrl', 'equipments'];
+const onUpdateValues = ['title', 'notes', 'email', 'phone', 'price',
+'address', 'city', 'province', 'squareMeter', 'rooms', 'bathrooms', 'locationUrl'];
 
 Promise.all([getProvincesList(), getEquipments(), getSaleTypes()]).then(
     ([provinceList, equipmentList, saleTypesList]) => {
@@ -47,8 +47,11 @@ Promise.all([getProvincesList(), getEquipments(), getSaleTypes()]).then(
 const addElement = (value, id) => 
     newProperty = { ...newProperty, [id]: [...newProperty[id], value].sort() };
 
+// const removeElement = (value, id) => { newProperty[id].pop(value) };
 const removeElement = (value, id) => {
-    newProperty[id].splice(newProperty[id].indexOf(value), 1)};
+    const index = newProperty[id].indexOf(value);
+    newProperty[id].splice(index, 1);
+};
 
 const checkboxEvent = (list, id) => {
     list.forEach( el => {
