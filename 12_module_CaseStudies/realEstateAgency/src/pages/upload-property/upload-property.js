@@ -45,7 +45,7 @@ Promise.all([getProvincesList(), getEquipments(), getSaleTypes()]).then(
 );
 
 const addElement = (value, id) => 
-    newProperty = { ...newProperty, [id]: [...newProperty[id], value] };
+    newProperty = { ...newProperty, [id]: [...newProperty[id], value].sort() };
 
 const removeElement = (value, id) => { newProperty[id].pop(value) };
 

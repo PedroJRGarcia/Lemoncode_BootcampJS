@@ -44,10 +44,9 @@ let filter = {
 // for (let param of filterValues) {
 //     onUpdateField(param.id, event => {
 //         const value = event.target.value;
-//         const paramName = param.name;
 //         filter = {
 //             ...filter,
-//             [paramName]: value,
+//             [param.name]: value,
 //         }
 //     });
 // }
