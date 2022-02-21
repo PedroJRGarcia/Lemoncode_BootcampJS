@@ -93,7 +93,7 @@ onSubmitForm ('insert-feature-button', () => {
         const buttonId = formatDeleteFeatureButtonId(newFeature);
         onSubmitForm(buttonId, () => {
             onRemoveFeature(newFeature);
-            newProperty.mainFeatures.pop(newFeature);
+            newProperty.mainFeatures.splice(newFeature);
         });
     }
 });
