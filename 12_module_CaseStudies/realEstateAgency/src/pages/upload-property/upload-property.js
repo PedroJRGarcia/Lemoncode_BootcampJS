@@ -95,7 +95,8 @@ onSubmitForm ('insert-feature-button', () => {
         const buttonId = formatDeleteFeatureButtonId(newFeature);
         onSubmitForm(buttonId, () => {
             onRemoveFeature(newFeature);
-            newProperty.mainFeatures.splice(newFeature);
+            const index = newProperty.mainFeatures.indexOf(newFeature);
+            newProperty.mainFeatures.splice(index, 1);
         });
     }
 });
