@@ -100,6 +100,11 @@ const validationSchema = {
             validator: Validators.pattern,
             customArgs: { pattern: /^(http|https)\:\/\/www\.google\.com\/maps\// },
         }],
+        equipments: [{
+            validator: arrayRequired.validator,
+            customArgs: { minLength: 1, maxLength: 6 },
+            message: 'Enter at least one type',
+        }],
     },
 };
 
