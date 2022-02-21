@@ -6,7 +6,7 @@ export const mapNewPropertyVmToApi = newProperty => {
         email: newProperty.email,
         phone: newProperty.phone,
         price: parseInt(newProperty.price),
-        saleTypeIds: newProperty.saleTypeIds,
+        saleTypeIds: newProperty.saleTypes,
         address: newProperty.address,
         city: newProperty.city,
         provinceId: newProperty.provinceId,
@@ -15,7 +15,7 @@ export const mapNewPropertyVmToApi = newProperty => {
         bathrooms: parseInt(newProperty.bathrooms),
         locationUrl: newProperty.locationUrl,
         mainFeatures: newProperty.mainFeatures,
-        equipmentIds: newProperty.equipmentIds,
+        equipmentIds: newProperty.equipments,
         images: newProperty.images,
     }
 };
